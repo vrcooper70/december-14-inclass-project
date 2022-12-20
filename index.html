@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Class Assignment Dec-14</title>
+</head>
+<body>
+    <script>
+
+class Restaurant {
+            constructor(name, address, city, state, phone) {
+                this.name = name;
+                this.address = address;
+                this.city = city;
+                this.state = state;
+                this.phone = phone;
+            }
+        }
+
+class Burgers extends Restaurant {
+    
+    constructor(name, address, city, state, phone, rating) {
+        super(name, address, city, state, phone);
+        this.rating = rating;
+        
+
+        let item1 =  '1/4 lb. cheeseburger';
+        let item2 = 'California burger';
+        let item3 = 'Chocolate milkshake';
+    }
+
+    summary () {
+        console.log(`${this.name} is a ${this.rating} star restaurant located at ${this.address} in ${this.city}, ${this.state}.
+        and is well known for its 1/4 lb. cheeseburgers, and delicious chocolate milkshakes. Please call ${this.phone} for
+        for reservations.`)
+    }
+    
+}
+
+class MenuItem {
+    constructor(item, price) {
+        this.item = item;
+        this.price = price;
+        
+    }
+
+    question () {
+        console.log("What would you like to order"); 
+
+    }
+}
+
+
+class Appetizer extends MenuItem {
+    constructor(item, price, isSpicy) {
+        super(item, price);
+        this.isSpicy = isSpicy;
+
+        
+    } 
+
+    selectItem () {
+        if(this.item === 'spring rolls' && this.isSpicy === false) {
+            console.log(`You have ordered non-spicy ${this.item}! That will cost $${this.price}`);
+        }
+    }
+}
+
+  
+class mainDish extends MenuItem {
+    constructor(item, price) {
+        super(item, price);
+    }
+}
+
+let restaurant1 = new Restaurant('Barneys','123 Main St.','Berkeley', 'CA', '510-123-1234');
+
+// console.log(restaurant1);
+// console.log(restaurant1.name);
+// console.log(restaurant1.address);
+// console.log(restaurant1.city);
+// console.log(restaurant1.state);
+// console.log(restaurant1.phone);
+
+let burgerRestaurant1 = new Burgers('A+ Burger', '124 S. Main St', 'Berkeley', 'CA', '510-123-3333','5');
+burgerRestaurant1.summary();
+
+let menuItem1 = new MenuItem('Sushi', 15);
+//console.log(menuItem1.question());
+
+let appetizer1 = new Appetizer('spring rolls', 4, false);
+//console.log(appetizer1.selectItem());
+
+    </script>
+
+
+
+</body>
+</html>
